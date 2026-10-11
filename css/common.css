@@ -1,0 +1,610 @@
+@charset 'utf-8';
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css');
+
+:root {
+    --primary-color: #1E3A8A;
+    --sub-color: #a7e7ff;
+}
+
+/* 초기화 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    /* scroll-behavior: smooth; */
+    font-size: 10px;
+}
+
+body {
+    font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+    color: #111;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* =========================
+       HEADER
+    ========================= */
+.header {
+    width: 100%;
+    height: 80px;
+    background: #fff;
+
+    display: flex;
+    align-items: center;
+    padding: 0 26px;
+
+    position: relative;
+    z-index: 10;
+}
+
+.logo {
+    width: 145px;
+    flex-shrink: 0;
+}
+
+.logo img {
+    width: 100%;
+    display: block;
+}
+
+.gnb {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+
+    display: flex;
+    align-items: center;
+    gap: 65px;
+}
+
+.gnb a {
+    font-size: 16px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.gnb a:hover {
+    color: var(--primary-color);
+}
+
+.here {
+    color: var(--primary-color);
+}
+
+.header-util {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.user-icon {
+    color: var(--primary-color);
+}
+
+.language {
+    height: 34px;
+    padding: 0 14px;
+
+    border: 1px solid #ccc;
+    border-radius: 18px;
+    background: white;
+
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    font-size: 13px;
+    font-weight: 600;
+
+}
+
+.menu-icon {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 4px;
+}
+
+/* =========================
+       HERO
+    ========================= */
+.hero {
+    height: calc(100vh - 80px);
+    display: flex;
+    align-items: center;
+}
+
+.hero.main {
+    background:
+        linear-gradient(115deg,
+            #12377d 0%,
+            #214895 40%,
+            #718ed8 100%);
+}
+
+.hero.sonoCareLab,
+.hero.veterinary,
+.hero.education,
+.hero.ultrasoundSupplies,
+.hero.preCheckUp {
+    background:
+        linear-gradient(115deg,
+            #6594eb 0%,
+            #7286ac 40%,
+            #e5e9f3 100%);
+}
+
+.hero-inner {
+    width: 100%;
+    max-width: 1450px;
+    margin: 0 auto;
+    padding: 0 70px;
+
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    align-items: center;
+    gap: 50px;
+}
+
+/* hero text */
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.hero-label {
+    color: var(--primary-color);
+    font-size: 15px;
+    font-weight: 500;
+    margin-bottom: 18px;
+}
+
+.hero-label.main {
+    color: var(--sub-color);
+}
+
+.hero-title {
+    color: white;
+    font-size: clamp(42px, 3.5vw, 62px);
+    font-weight: 800;
+    line-height: 1.12;
+    letter-spacing: -1.5px;
+
+    margin-bottom: 15px;
+}
+
+.hero-description {
+    color: rgba(255, 255, 255, 0.95);
+    font-size: 18px;
+    line-height: 1.5;
+    letter-spacing: -0.4px;
+
+    max-width: 750px;
+}
+
+/* buttons */
+.hero-buttons {
+    display: flex;
+    gap: 24px;
+    margin-top: 38px;
+}
+
+.hero-buttons.education {
+    display: grid;
+    grid-template-columns: repeat(3, 112px);
+    gap: 18px 24px;
+}
+
+.hero-btn {
+    min-width: 112px;
+    height: 48px;
+
+    border: 1px solid var(--sub-color);
+    border-radius: 7px;
+
+    color: white;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    transition: 0.25s;
+}
+
+.hero-btn:hover {
+    background: rgba(255, 255, 255, 0.12);
+    transform: translateY(-2px);
+}
+
+/* =========================
+       ULTRASOUND VIDEO / IMAGE
+    ========================= */
+.hero-media {
+    width: 100%;
+    max-width: 590px;
+    margin-left: auto;
+}
+
+.hero-media video,
+.hero-media img {
+    display: block;
+    width: 100%;
+    height: auto;
+    background: #000;
+}
+
+/* ================= DATA PAGE ================= */
+
+.data-page {
+    min-height: 100vh;
+    height: auto;
+    padding: 120px 24px 100px;
+    box-sizing: border-box;
+}
+
+/* 기존 veterinary 배경 유지 */
+.data-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.data-heading {
+    text-align: center;
+    color: #fff;
+    margin-bottom: 45px;
+}
+
+.data-label {
+    display: inline-block;
+    color: #8ebeff;
+    font-size: 13px;
+    letter-spacing: 3px;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.data-heading h1 {
+    font-size: 48px;
+    font-weight: 700;
+    margin: 0 0 14px;
+}
+
+.data-heading p {
+    font-size: 16px;
+    color: #d4deeb;
+}
+
+/* 카드 */
+.data-card {
+    background: rgba(255,255,255,0.96);
+    border-radius: 20px;
+    padding: 36px 40px;
+    margin-bottom: 28px;
+    box-shadow: 0 12px 35px rgba(0,0,0,0.12);
+}
+
+.data-card h2 {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    font-size: 25px;
+    color: #192b45;
+    margin: 0 0 26px;
+}
+
+.data-card h2 span {
+    color: #3276c9;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.data-subtitle {
+    color: #243d5e;
+    font-size: 18px;
+    margin: 28px 0 16px;
+}
+
+/* 표 */
+.table-scroll {
+    overflow-x: auto;
+}
+
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    color: #34445b;
+    line-height: 1.7;
+}
+
+.data-table th,
+.data-table td {
+    padding: 16px 20px;
+    border-bottom: 1px solid #e3eaf2;
+    text-align: left;
+    vertical-align: middle;
+}
+
+.data-table th {
+    background: #edf3fb;
+    color: #203d63;
+    font-weight: 600;
+}
+
+.data-table tbody tr:hover td {
+    background: #f4f8fe;
+}
+
+.data-table tbody tr:hover th {
+    background: #e4eefb;
+}
+
+.data-table tbody tr:last-child th,
+.data-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* 가격표 */
+.price-table thead th {
+    background: #23466f;
+    color: #fff;
+}
+
+.price-table tbody td:last-child {
+    font-weight: 700;
+    color: #2866b1;
+    white-space: nowrap;
+}
+
+/* 서비스 진행 과정 */
+.process-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 12px;
+}
+
+.process-step {
+    background: #f0f5fc;
+    border: 1px solid #e0e9f5;
+    border-radius: 12px;
+    padding: 22px 12px;
+    text-align: center;
+}
+
+.process-step span {
+    display: block;
+    color: #3778c8;
+    font-size: 12px;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.process-step strong {
+    display: block;
+    color: #1c3656;
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.process-step p {
+    color: #718096;
+    font-size: 12px;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* 태블릿 */
+@media (max-width: 900px) {
+    .process-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .data-card {
+        padding: 28px;
+    }
+}
+
+/* 모바일 */
+@media (max-width: 600px) {
+    .data-page {
+        padding: 90px 16px 60px;
+    }
+
+    .data-heading h1 {
+        font-size: 34px;
+    }
+
+    .data-card {
+        padding: 24px 18px;
+        border-radius: 14px;
+    }
+
+    .data-card h2 {
+        font-size: 21px;
+    }
+
+    .process-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .data-table {
+        min-width: 560px;
+        font-size: 13px;
+    }
+
+    .data-table th,
+    .data-table td {
+        padding: 12px 14px;
+    }
+}
+
+
+/* =========================
+       FOOTER
+    ========================= */
+.footer {
+    height: 165px;
+    background: white;
+
+    display: flex;
+    align-items: center;
+}
+
+.footer-inner {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: 90px 1fr 100px;
+    align-items: center;
+    gap: 30px;
+}
+
+.footer-logo {
+    width: 70px;
+}
+
+.footer-logo img {
+    width: 100%;
+    display: block;
+}
+
+.footer-address {
+    font-size: 14px;
+    margin-bottom: 17px;
+}
+
+.footer-contact {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+
+    color: #777;
+    font-size: 14px;
+}
+
+.footer-contact img {
+    width: 20px;
+    height: 20px;
+}
+
+.footer-contact a {
+    text-decoration: underline;
+}
+
+.qr img {
+    width: 78px;
+    display: block;
+}
+
+/* =========================
+       RESPONSIVE
+    ========================= */
+@media (max-width: 1100px) {
+
+    .gnb {
+        gap: 25px;
+    }
+
+    .hero-inner {
+        padding: 0 40px;
+        gap: 40px;
+    }
+
+    .hero-title {
+        font-size: 45px;
+    }
+}
+
+@media (max-width: 900px) {
+
+    .gnb {
+        display: none;
+    }
+
+    .hero {
+        padding: 80px 0;
+    }
+
+    .hero-inner {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-media {
+        margin: 20px 0 0;
+        max-width: 700px;
+    }
+
+    .footer {
+        height: auto;
+        padding: 35px;
+    }
+
+    .footer-inner {
+        grid-template-columns: 70px 1fr;
+    }
+
+    .qr {
+        display: none;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .header {
+        height: 65px;
+        padding: 0 18px;
+    }
+
+    .logo {
+        width: 120px;
+    }
+
+    .user-icon {
+        display: none;
+    }
+
+    .hero-inner {
+        padding: 0 22px;
+    }
+
+    .hero-title {
+        font-size: 36px;
+    }
+
+    .hero-description {
+        font-size: 15px;
+    }
+
+    .hero-buttons {
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+
+    .hero-btn {
+        min-width: 100px;
+    }
+}
